@@ -1,0 +1,50 @@
+# Welcome to Serverless!
+#
+# This file is the main config file for your service.
+# It's very minimal at this point and uses default values.
+# You can always add more config options for more control.
+# We've included some commented out config examples here.
+# Just uncomment any of them to get that config option.
+#
+# For full config options, check the docs:
+#    docs.serverless.com
+#
+# Happy Coding!
+
+service: 
+  name: testService
+
+provider:
+  name: aws
+  runtime: python2.7
+  stage: dev
+  region: eu-west-1
+  timeout: 10
+  deploymentBucket:
+    name: jemromerol-tmp  # Your deployment bucket here
+
+package:
+  exclude:
+    - node_modules/**
+    - env/**
+    - README.md
+    - package.json
+    - package-lock.json
+    - requirements.txt
+
+functions:
+  hello:
+    handler: handler.lambda_test
+    events:
+      - http:
+          path: /
+          method: get
+
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    zip: true
+    cleanupZipHelper: true

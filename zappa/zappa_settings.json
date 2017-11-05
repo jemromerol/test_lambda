@@ -1,0 +1,16 @@
+{
+    "dev": {
+        "keep_warm": false,
+        "debug": true,
+        "log_level": "DEBUG",
+        "lambda_handler": "app.lambda_test", 
+        "aws_region": "eu-west-1", 
+        "profile_name": null,
+        "manage_roles": true,
+        "project_name": "lambda_zappa_test", 
+        "runtime": "python2.7", 
+        "s3_bucket": "jemromerol-tmp",
+        "slim_handler": true,
+    }
+}
+
